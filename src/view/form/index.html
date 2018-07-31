@@ -1,0 +1,47 @@
+<div v-if="!isPC">
+    <div class="top-navigation-place-m" :style="{ 'width': WIDTH }"></div>
+    <div :style="{ 'width': WIDTH }">
+        <div class="link-wrap-m">
+            <div class="toHome" @click="toIndex">主页</div>
+            <div class="gt-m">&gt;</div>
+            <div>提交工单</div>
+        </div>
+        <div class="upload-file-tit-m">提交工单</div>
+        <div class="form-wrap-m">
+            <el-form :model="moreHelpForm" :rules="moreHelpFormRules" ref="helpForm" label-position="top">
+              <el-form-item label="邮箱" prop="email">
+                <el-input v-model="moreHelpForm.email" placeholder="请填写您的联系邮箱" name="email"></el-input>
+              </el-form-item>
+              <el-form-item label="标题" prop="tit">
+                <el-input v-model="moreHelpForm.tit" placeholder="请至少输入一个字符" name=""title></el-input>
+              </el-form-item>
+              <el-form-item label="问题描述" prop="describe">
+                <el-input type="textarea" v-model="moreHelpForm.describe" placeholder="请输入您的需求，我们会尽快和您联系" name="content"></el-input>
+              </el-form-item>
+              <el-form-item label="问题类型">
+                <el-select v-model="moreHelpForm.type" placeholder="请选择您的问题类型" name="type">
+                  <el-option label="未收到币" value="1"></el-option>
+                  <el-option label="挖矿问题" value="2"></el-option>
+                  <el-option label="算力统计问题" value="3"></el-option>
+                  <el-option label="矿池连接问题" value="4"></el-option>
+                  <el-option label="其它" value="5"></el-option>
+                </el-select>
+              </el-form-item>
+                <el-form-item label="附件">
+                    <!-- 上传文件地址 -->
+                    <el-upload
+                        drag
+                        action="https://jsonplaceholder.typicode.com/posts/"
+                        multiple>
+                        <i class="el-icon-upload"></i>
+                        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+                    </el-upload>
+                </el-form-item>
+            </el-form>
+        </div>
+        <div slot="footer" class="help-form-footer">
+            <div class="submit-help-form-btn-m" @click="submitHelpForm('helpForm')">提交</div>
+        </div>
+    </div>
+    <div class="footer-place"></div>
+</div>

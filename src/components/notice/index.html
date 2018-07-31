@@ -1,0 +1,36 @@
+<div>
+    <div v-if="isPC">
+        <div class="notice-wrap" v-if="noticeOn">
+            <div class="notice-mesg-wrap">
+                <i class="iconfont icon-qd04"></i>
+                <div class="notice-content">{{listData}}</div>
+                <i class="iconfont icon-guanbi" @click="closeNotice"></i>
+                <!-- <vue-seamless-scroll :data="listData" :class-option="classOption" class="warp">
+                    <ul class="item">
+                        <li v-for="item in listData">
+                            <span class="title" v-text="item.title"></span>
+                        </li>
+                    </ul>
+                </vue-seamless-scroll> -->
+            </div>
+        </div>
+    </div>
+    <div v-if="!isPC">
+        <el-collapse-transition>
+            <div class="notice-wrap-m" v-if="noticeOn">
+                <div class="notice-mesg-wrap-m">
+                    <i class="iconfont icon-qd04" style="font-size: 26px;"></i>
+                    <div class="notice-content-m">{{listData}}</div>
+                    <i class="iconfont icon-guanbi close-btn-m" @click="closeNotice"></i>
+                    <!-- <vue-seamless-scroll :data="listData" :class-option="classOption" class="warp-m">
+                        <ul class="item">
+                            <li v-for="item in listData">
+                                <span class="title" v-text="item.title"></span>
+                            </li>
+                        </ul>
+                    </vue-seamless-scroll> -->
+                </div>
+            </div>
+        </el-collapse-transition>
+    </div>
+</div>

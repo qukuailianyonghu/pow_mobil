@@ -1,0 +1,86 @@
+.canvas-wrap {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.welcome-wrap {
+    position: absolute;
+    top: 10rem;
+    right: 12rem;
+    color: #fff;
+    font-size: 30px;
+}
+
+.welcome-content {
+    width: 30rem;
+    font-size: 20px;
+}
+
+/* 开始过渡阶段,动画出去阶段 */
+.fade-enter-active,.fade-leave-active{
+    transition: all 1s ease-out;
+}
+/* 进入开始 */
+.fade-enter{
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.sign-form-wrap {
+    position: absolute;
+    top: 10rem;
+    left: 12rem;
+}
+
+.sign-tit {
+    margin-bottom: 50px;
+    color: #195add;
+}
+
+.check-components {
+    padding-bottom: 35px;
+    border-bottom: 1px solid #e5edf3;
+}
+
+.sign-form-item-wrap {
+    margin: 30px 0;
+}
+
+.sign-form-tit {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.forget-password {
+    font-size: 14px;
+    color: #195add;
+    cursor: pointer;
+    text-align: right;
+}
+
+.log-form-btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.register-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-btn {
+    color: #195add;
+    cursor: pointer;
+}

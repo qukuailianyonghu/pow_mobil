@@ -1,0 +1,30 @@
+<div class="canvas-wrap">
+    <canvas ref="signCanvas" id="canvas" style="background:#fbfcff">you browser not support canvas!</canvas>
+    <p class="logo">2100 POOL</p>
+    <div class="welcome-wrap">
+        <transition-group name="fade">
+            <h1 key="welcomeTit" v-show="bgDown">Welcome back</h1>
+            <p class="welcome-content" key="welcomeContent" v-show="bgDown">不管你是一个老矿工还是新手挖矿，2100 POOL都能成为第一个平台，它将以安全、简单、直观的方式更快地满足你所有的挖矿需求。</p>
+        </transition-group>
+    </div>
+    <div class="sign-form-wrap">
+        <h1 class="sign-tit">登录</h1>
+        <check-location class="check-components"></check-location>
+        <div class="sign-form-item-wrap">
+            <span class="sign-form-tit">邮箱</span>
+            <el-input v-model="email" placeholder="请输入邮箱"></el-input>
+        </div>
+        <div class="sign-form-item-wrap">
+            <span class="sign-form-tit">密码</span>
+            <el-input v-model="password" type="password" placeholder="请输入密码"></el-input>
+        </div>
+        <div class="forget-password" @click="toFindPassword">忘记密码？</div>
+        <div>
+            <el-button type="primary" class="log-form-btn" @click="toLogin">登录</el-button>
+        </div>
+        <div class="register-wrap">
+            <span>还未申请账户？</span>
+            <span class="register-btn" @click="toRegister">注册</span>
+        </div>
+    </div>
+</div>

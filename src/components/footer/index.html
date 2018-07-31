@@ -1,0 +1,87 @@
+<div>
+    <div class="footer-wrap" v-if="isPC">
+        <canvas ref="footerCanvas" id="canvas" style="background:#fbfcff">you browser not support canvas!</canvas>
+        <div class="footer-content-wrap">
+            <p class="footer-slogon">我们期待与优秀币种以及矿工共同组建矿池。</p>
+            <div>
+                <div class="footer-info-group">
+                    <el-popover trigger="hover" placement="left" v-model="viewWechatFlag">
+                        <img src="../../assets/img/Bitmap.png" class="wechat-qrcode">
+                        <div slot="reference">
+                            <i class="iconfont icon-wechat1 footer-icon"></i>
+                            <span class="footer-info">2100pool(点我扫二维码)</span>
+                        </div>
+                        <!-- <i class="iconfont icon-wechat1 footer-icon" slot="reference"></i> -->
+                    </el-popover>
+                    <!-- <i class="iconfont icon-wechat1 footer-icon"></i>
+                    <span class="footer-info">409275203</span> -->
+                </div>
+                <div class="footer-info-group">
+                    <i class="iconfont icon-icon-email footer-icon"></i>
+                    <span class="footer-info">pool2100@163.com</span>
+                </div>
+                <div class="footer-info-group" @click="joinTelegram">
+                    <i class="iconfont icon-emizhifeiji footer-icon"></i>
+                    <span class="footer-info">https://t.me/tokenbankgroup</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright-wrap">
+            <div class="footer-copyright-bg">
+                <div class="footer-copyright-group">
+                    <i class="iconfont icon-copyright"></i>
+                    <span class="copyright-info">2100pool Developers  | 2017 - 2018 | build by tokenbank</span>
+                </div>
+                <div class="link-icon-group">
+                    <!-- <i class="iconfont icon-facebook1 link-icon" @click="toFaceBook"></i> -->
+                    <i class="iconfont icon-twitter link-icon" @click="toTwitter"></i>
+                    <!-- <i class="iconfont icon-emizhifeiji link-icon" @click="joinTelegram"></i> -->
+                    <i class="iconfont icon-Git link-icon" @click="toGithub"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrap" v-if="!isPC" :style="{ 'width': WIDTH }">
+        <canvas ref="footerCanvas" id="canvas" style="background:#fbfcff">you browser not support canvas!</canvas>
+        <div class="footer-content-wrap">
+            <p class="footer-slogon">我们期待与优秀币种以及矿工共同组建矿池。</p>
+            <div>
+                <div class="footer-info-group">
+                    <!-- <el-popover trigger="hover" placement="left" v-model="viewWechatFlag"> -->
+                        <!-- <img src="../../assets/img/Bitmap.png" class="wechat-qrcode"> -->
+                        <div slot="reference" class="wechat-group-m">
+                            <i class="iconfont icon-wechat1 footer-icon"></i>
+                            <img src="../../assets/img/Bitmap.png" class="wechat-qrcode-m">
+                            <span class="footer-info">2100pool(点我扫二维码)</span>
+                        </div>
+                        <!-- <i class="iconfont icon-wechat1 footer-icon" slot="reference"></i> -->
+                    <!-- </el-popover> -->
+                    <!-- <i class="iconfont icon-wechat1 footer-icon"></i>
+                    <span class="footer-info">409275203</span> -->
+                </div>
+                <div class="footer-info-group">
+                    <i class="iconfont icon-icon-email footer-icon"></i>
+                    <span class="footer-info">pool2100@163.com</span>
+                </div>
+                <div class="footer-info-group" @click="joinTelegram">
+                    <i class="iconfont icon-emizhifeiji footer-icon"></i>
+                    <span class="footer-info">https://t.me/tokenbankgroup</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright-wrap">
+            <div class="footer-copyright-bg">
+                <div class="footer-copyright-group">
+                    <i class="iconfont icon-copyright"></i>
+                    <span class="copyright-info">2100pool Developers  | 2017 - 2018 | build by tokenbank</span>
+                </div>
+                <div class="link-icon-group">
+                    <!-- <i class="iconfont icon-facebook1 link-icon" @click="toFaceBook"></i> -->
+                    <i class="iconfont icon-twitter link-icon" @click="toTwitter"></i>
+                    <!-- <i class="iconfont icon-emizhifeiji link-icon" @click="joinTelegram"></i> -->
+                    <i class="iconfont icon-Git link-icon" @click="toGithub"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

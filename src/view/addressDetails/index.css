@@ -1,0 +1,238 @@
+.top-navigation-place-m {
+    width: 100%;
+    height: 228px;
+    background-color: #185EDE;
+}
+
+.miner-total-wrap-m {
+    /* margin: 30px 0 0 0; */
+    width: 100%;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.miner-address-m {
+    margin: 0 0 30px 0;
+    font-size: 30px;
+    color: #5E6875;
+}
+
+.miner-count-wrap-m {
+    display: flex;
+}
+
+.miner-count-box-m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+.miner-count-box-online-m {
+    margin-right: 50px;
+    color: #2CD7A3;
+}
+
+.miner-count-box-total-m {
+    color: #005CC7;
+}
+
+.miner-count-icon-m {
+    margin-right: 20px;
+    display: inline-block;
+    width: 24px;
+    height: 18px;
+    border-radius: 4px;
+}
+
+.miner-count-icon-online-m {
+    background-color: #2CD7A3;
+}
+
+.miner-count-icon-total-m {
+    background-color: #005CC7;
+}
+
+.profit-info-wrap {
+    padding: 30px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #f7fcfa;
+}
+
+.profit-info-group {
+    width: 45%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    /* align-items: center; */
+}
+
+.profit-info-wrap .profit-info-group:first-child, .profit-info-wrap .profit-info-group:nth-child(2) {
+    margin-bottom: 30px;
+}
+
+.profit-info-tit {
+    margin: 0 0 10px 20px;
+    font-size: 25px;
+    color: #5E6875;
+}
+
+.profit-info-content {
+    margin: 0 0 10px 20px;
+    font-size: 30px;
+    color: #195ADD;
+}
+
+.profit-charts-wrap-m {
+    /* margin: 30px 0 0 0; */
+    width: 100%;
+    height: 728px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.profit-charts-m {
+    width: 95%; 
+    height: 600px;
+}
+
+.mine-field-info-wrap-m {
+    margin: 50px 0 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mine-field-info-group-m {
+    width: 60%;
+    height: 213px;
+}
+
+.mine-field-info-wrap-m .mine-field-info-group-m:last-child {
+    margin-top: 30px;
+}
+
+.mine-field-info-tit-m {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 25px;
+    font-weight: 400;
+    color: #afb1c2;
+    text-align: center;
+    background: #E3EBFB;
+}
+
+.mine-field-info-content-wrap-m {
+    width: 100%;
+    height: 140px;
+    background: #fff;
+    display: flex;
+}
+
+.mine-field-info-content-wrap-calculation-force-m {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mine-field-info-content-wrap-address-m {
+    justify-content: center;
+    align-items: center;
+}
+
+.calculation-force-wrap-m {
+    font-size: 25px;
+}
+
+.calculation-force-tit-m {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #5E6875;
+}
+
+.calculation-force-content-m {
+    text-align: center;
+}
+
+.mine-field-info-address-m {
+    margin-bottom: 15px;
+}
+
+.list-wrap-m {
+    margin: 50px 0 0 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+.list-bg-m {
+    padding: 40px;
+}
+
+.list-tabs-wrap-m {
+    display: inline-flex;
+}
+
+.list-tab-m {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #E5EFFA;
+    color: #005CC7;
+    font-size: 25px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.list-tab-active-m {
+    background-color: #005CC7;
+    color: #fff;
+}
+
+.list-group-m {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-group-m .el-table {
+    font-size: 25px;
+}
+
+.list-group-m .el-pager li {
+    font-size: 25px;
+}
+
+.list-group-m .el-pagination .btn-prev .el-icon {
+    font-size: 25px;
+}
+
+.list-group-m .el-table td, .list-group-m .el-table th {
+    padding: 25px 0;
+}
+
+.list-table-m {
+    margin: 30px 0;
+}
+
+.payment-txid-m .el-table_2_column_7 {
+    color: #005CC7;
+}

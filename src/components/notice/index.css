@@ -1,0 +1,168 @@
+/* @media screen and (min-width: 1000px) { */
+    .notice-wrap {
+        position: relative;
+        width: 100%;
+        z-index: 2000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #E2689A;
+    }
+
+    .notice-mesg-wrap {
+        position: relative;
+        height: 25px;
+        padding: 4px;
+        width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .icon-qd04 {
+        margin-right: 20px;
+        color: #fff;
+    }
+
+    .warp {
+        height: 30px;
+        
+        overflow: hidden;
+    }
+    .warp ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .warp li {
+        height: 30px;
+        line-height: 30px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .icon-guanbi {
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+
+    .notice-wrap-m {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #E2689A;
+    }
+
+    .notice-mesg-wrap-m {
+        position: relative;
+        height: 70px;
+        padding: 4px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 26px;
+    }
+
+    .icon-qd04 {
+        margin-right: 20px;
+        color: #fff;
+    }
+
+    .warp-m {
+        height: 30px;
+        
+        overflow: hidden;
+    }
+    .warp-m ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .warp-m li {
+        height: 30px;
+        line-height: 30px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .close-btn-m {
+        position: absolute;
+        right: 0;
+        padding: 20px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+    }
+/* }
+
+@media screen and (max-width: 1000px) {
+    .notice-wrap {
+        position: relative;
+        width: 100%;
+        z-index: 2000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #E2689A;
+    }
+
+    .notice-mesg-wrap {
+        position: relative;
+        height: 25px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .icon-qd04 {
+        margin-right: 20px;
+        color: #fff;
+    }
+
+    .warp {
+        height: 30px;
+        
+        overflow: hidden;
+    }
+    .warp ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .warp li {
+        height: 30px;
+        line-height: 30px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .icon-guanbi {
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+    }
+} */

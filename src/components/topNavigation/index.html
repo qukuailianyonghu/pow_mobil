@@ -1,0 +1,48 @@
+<div>
+    <div v-if="isPC">
+        <notice v-if="haveNotice"></notice>
+        <div :class="isFixed ? 'fixed-navigation' : 'normal-navigation'">
+                <div class="top-navigation-bg" :class="haveColor ? 'top-navigation-wrap-color' : 'top-navigation-wrap-transparent'" :style="{ 'color': isFixed ? '#005CC7' : '' }">
+            <!-- <div class="top-navigation-bg" :class="haveColor ? 'top-navigation-wrap-color' : 'top-navigation-wrap-transparent'" :style="{ 'border-bottom': isFixed ? '1px solid #e5e5e5' : '1px solid transparent', 'background-color': isFixed ? '#fff' : 'transparent', 'color': isFixed ? '#005CC7' : '' }"> -->
+                <div class="top-navigation-wrap">
+                    <div class="logo-btn" @click="toHomePage">2100 POOL</div>
+                    <div class="navigate-btn-wrap" :class="haveColor ? 'navigate-btn-wrap-color' : 'navigate-btn-wrap-transparent'">
+                        <div class="navigate-btn" :class="activePath == '/help' ? 'activeBtn' : ''" @click="toHelpPage">帮助中心</div>
+                        <!-- <div class="navigate-btn" :class="activePath == '/profit' ? 'activeBtn' : ''" @click="toProfitPage">查看收益</div> -->
+                        <el-popover trigger="click" placement="bottom" v-model="viewProfitFlag">
+                            <div class="view-profit-wrap">
+                                <input type="text" placeholder="请输入DCR地址" class="dcr-adddress-input" v-model="value">
+                                <div @click="toViewProfit" class="view-profit-btn">查看</div>
+                            </div>
+                            <div class="navigate-btn" :class="activePath == '/profit' ? 'activeBtn' : ''"  slot="reference">查看收益</div>
+                        </el-popover>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div v-if="!isPC" class="fixed-navigation-wrap-m">
+        <notice v-if="haveNotice"></notice>
+        <div class="navigate-menu-wrap-m">
+            <div :class="isFixed ? 'fixed-navigation-m' : 'normal-navigation-m'" class="navigation-m" :style="{ 'background-color': menuFlag ? 'transparent' : '' }">
+                <div class="navigate-wrap-m">
+                    <div class="logo-btn-m" @click="toHomePage">2100 POOL</div>
+                    <img src="../../assets/img/menu.png" class="menu-m" slot="reference" @click="triggerMenu">
+                </div>
+            </div>
+            <el-collapse-transition>
+                <div v-show="menuFlag" class="menu-wrap-m">
+                    <div class="menu-group-m">
+                        <div class="menu-item-m" @click="toHelpPage">帮助中心</div>
+                        <div class="menu-item-m" @click="toForm">提交工单</div>
+                        <div class="menu-search-item-m">
+                            <div class="search-tit-m">DCR</div>
+                            <input type="text" class="search-address-m" placeholder="输入地址查询"  v-model="value">
+                            <div class="search-submit-m" @click="searchAddress">查看</div>
+                        </div>
+                    </div>
+                </div>
+            </el-collapse-transition>
+        </div>
+    </div>
+</div>

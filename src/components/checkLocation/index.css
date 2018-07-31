@@ -1,0 +1,34 @@
+.safe-location {
+    color: #01ac5a;
+}
+
+.dangerous-location {
+    color: red;
+}
+
+.href-wrap {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    border: 1px solid #d4dee7;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.icon-suo {
+    margin: 4px 0;
+    padding: 4px 6px;
+    border-right: 1px solid #d4dee7;
+}
+
+.href-content {
+    margin: 0 6px;
+}
+
+.tips-wrap {
+    font-size: 14px;
+}
+
+.tips-href {
+    font-weight: bolder;
+}

@@ -1,0 +1,124 @@
+<div v-if="!isPC">
+    <div class="top-navigation-place-m" :style="{ 'width': WIDTH }"></div>
+    <div :style="{ 'width': WIDTH }">
+        <div class="miner-total-wrap-m shadow-box border-box">
+            <div class="miner-address-m">{{addresses}}</div>
+            <div class="miner-count-wrap-m">
+                <div class="miner-count-box-m miner-count-box-online-m">
+                    <div class="miner-count-tit-group-m">
+                        <i class="miner-count-icon-m miner-count-icon-online-m"></i>
+                        <span class="miner-count-tit-m">在线矿工</span>
+                    </div>
+                    <span class="miner-counts-m">{{workeringAccount}}</span>
+                </div>
+                <div class="miner-count-box-m miner-count-box-total-m">
+                    <div class="miner-count-tit-group-m">
+                        <i class="miner-count-icon-m miner-count-icon-total-m"></i>
+                        <span class="miner-count-tit-m">全部矿工</span>
+                    </div>
+                    <span class="miner-counts-m">{{workerAccount}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="profit-info-wrap">
+            <div class="profit-info-group border-box">
+                <div class="profit-info-tit">过去24小时收益</div>
+                <div class="profit-info-content">{{yesterdayTwentyfour}} DCR</div>
+            </div>
+            <div class="profit-info-group border-box">
+                <div class="profit-info-tit">总收益</div>
+                <div class="profit-info-content">{{totalReard}} DCR</div>
+            </div>
+            <div class="profit-info-group border-box">
+                <div class="profit-info-tit">已支付</div>
+                <div class="profit-info-content">{{selectTotalPaied}} DCR</div>
+            </div>
+            <div class="profit-info-group border-box">
+                <div class="profit-info-tit">账户余额</div>
+                <div class="profit-info-content">{{notPaidReward}} DCR</div>
+            </div>
+        </div>
+        <div class="profit-charts-wrap-m shadow-box border-box">
+            <div ref="profitECharts" class="profit-charts-m"></div>
+        </div>
+        <div class="mine-field-info-wrap-m">
+            <div class="mine-field-info-group-m shadow-box border-box">
+                <div class="mine-field-info-tit-m">算力</div>
+                <div class="mine-field-info-content-wrap-m mine-field-info-content-wrap-calculation-force-m">
+                    <div class="calculation-force-wrap-m">
+                        <div class="calculation-force-tit-m">60分钟</div>
+                        <div class="calculation-force-content-m">
+                            <span>{{totalOneHour}}</span>
+                            <span class="calculation-force-content-unit-m">Ghash/s</span>
+                        </div>
+                    </div>
+                    <div class="calculation-force-wrap-m">
+                        <div class="calculation-force-tit-m">24小时</div>
+                        <div class="calculation-force-content-m">
+                            <span>{{totalTwentyfour}}</span>
+                            <span class="calculation-force-content-unit-m"> Ghash/s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mine-field-info-group-m shadow-box border-box">
+                <div class="mine-field-info-tit-m">挖矿地址</div>
+                <div class="mine-field-info-content-wrap-m mine-field-info-content-wrap-address-m">
+                    <div class="calculation-force-wrap-m">
+                        <div class="mine-field-info-address-m">stratum+tcp://dcr.2100pool.com:3252</div>
+                        <div>(在线：{{workeringAccount}} / 全部：{{workerAccount}})</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-wrap-m shadow-box border-box">
+            <div class="list-bg-m">
+                <div class="list-tabs-wrap-m border-box">
+                    <div class="list-tab-m" :class="activeTab == 0 ? 'list-tab-active-m': ''" @click="clickTab(0)">矿工管理</div>
+                    <div class="list-tab-m" :class="activeTab == 1 ? 'list-tab-active-m': ''" @click="clickTab(1)">支付记录</div>
+                </div>
+                <div class="list-group-m">
+                    <el-table :data="minerList" stripe v-show="activeTab == 0" class="list-table-m">
+                        <el-table-column prop="num" label="矿工" width="120" align="center" header-align="center"></el-table-column>
+                        <el-table-column prop="speed60" label="15分钟平均速度" width="250" align="center" header-align="center"></el-table-column>
+                        <el-table-column prop="speed24" label="24小时平均速度" width="250" align="center" header-align="center"></el-table-column>
+                        <el-table-column prop="refuse24" label="24小时过期拒绝率" width="250" align="center" header-align="center"></el-table-column>
+                        <el-table-column prop="date" label="最近提交时间" width="250" align="center" header-align="center">
+                          <template scope="scope">
+                            <span v-if="scope.row.isOnline < 0" style="color:red;">{{ scope.row.date }}</span>
+                            <span v-else style="color: #000000;">{{ scope.row.date }}</span>
+                          </template>
+                        </el-table-column>
+
+
+                        </el-table-column>
+                    </el-table>
+                    <!--<el-pagination-->
+                        <!--v-show="activeTab == 0"-->
+                        <!--@current-change="handleMinerListCurrentChange"-->
+                        <!--:current-page.sync="minerListCurrentPage"-->
+                        <!--:page-size="minerListPageSize"-->
+                        <!--:pager-count="11"-->
+                        <!--layout="prev, pager, next"-->
+                        <!--:total="minerListTotal">-->
+                    <!--</el-pagination>-->
+                    <el-table :data="paymentList" stripe v-show="activeTab == 1" class="list-table-m payment-txid-m">
+                        <el-table-column prop="date" label="时间" width="280" align="center" header-align="center"></el-table-column>
+                        <el-table-column prop="txid" label="交易(TXID)" width="560" align="center" header-align="center"></el-table-column>
+                        <el-table-column prop="price" label="金额" width="280" align="center" header-align="center"></el-table-column>
+                    </el-table>
+                    <!--<el-pagination-->
+                        <!--v-show="activeTab == 1"-->
+                        <!--@current-change="handlePaymentListCurrentChange"-->
+                        <!--:current-page.sync="paymentListCurrentPage"-->
+                        <!--:page-size="paymentListPageSize"-->
+                        <!--:pager-count="11"-->
+                        <!--layout="prev, pager, next"-->
+                        <!--:total="paymentListTotal">-->
+                    <!--</el-pagination>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-place"></div>
+</div>

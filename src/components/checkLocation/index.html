@@ -1,0 +1,13 @@
+<div>
+    <p class="tips-wrap">
+        <span class="tips-content">请检查你正在访问的是否是</span>
+        <span class="tips-href">https://www.2100pool.com</span>
+    </p>
+    <div @click="toRightHref" class="href-wrap">
+        <i class="iconfont icon-suo" :class="isSafe?'safe-location' : 'dangerous-location'"></i>
+        <div class="href-content">
+            <span :class="isSafe?'safe-location' : 'dangerous-location'">{{ http }}</span>
+            <span class="href-domain-content">{{ locationHref }}</span>
+        </div>
+    </div>
+</div>

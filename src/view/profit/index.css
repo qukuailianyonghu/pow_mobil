@@ -1,0 +1,415 @@
+@media screen and (min-width: 1000px) {
+    .profit-content-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #FAFCFF;
+    }
+
+    .miner-total-wrap {
+        margin: 30px 0 0 0;
+        width: 1200px;
+        height: 213px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+    }
+
+    .miner-address {
+        margin: 0 0 30px 0;
+        font-size: 18px;
+        color: #5E6875;
+    }
+
+    .miner-count-wrap {
+        display: flex;
+    }
+
+    .miner-count-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+    }
+
+    .miner-count-box-online {
+        margin-right: 50px;
+        color: #2CD7A3;
+    }
+
+    .miner-count-box-total {
+        color: #005CC7;
+    }
+
+    .miner-count-icon {
+        margin-right: 20px;
+        display: inline-block;
+        width: 24px;
+        height: 18px;
+        border-radius: 4px;
+    }
+
+    .miner-count-icon-online {
+        background-color: #2CD7A3;
+    }
+
+    .miner-count-icon-total {
+        background-color: #005CC7;
+    }
+
+    .profit-info-wrap {
+        margin: 30px 0 0 0;
+        width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .profit-info-group {
+        width: 268px;
+        height: 104px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #fff;
+        /* align-items: center; */
+    }
+
+    .profit-info-tit {
+        margin: 0 0 10px 20px;
+        font-size: 12px;
+        color: #5E6875;
+    }
+
+    .profit-info-content {
+        margin: 0 0 10px 20px;
+        font-size: 18px;
+        color: #195ADD;
+    }
+
+    .profit-charts-wrap {
+        margin: 30px 0 0 0;
+        width: 1200px;
+        height: 528px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+    }
+
+    .mine-field-info-wrap {
+        margin: 50px 0 0 0;
+        width: 1200px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mine-field-info-group {
+        width: 385px;
+        height: 213px;
+    }
+
+    .mine-field-info-tit {
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        font-size: 16px;
+        color: #afb1c2;
+        text-align: center;
+        background: #E3EBFB;
+    }
+
+    .mine-field-info-content-wrap {
+        width: 100%;
+        height: 140px;
+        background: #fff;
+        display: flex;
+    }
+
+    .mine-field-info-content-wrap-calculation-force {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mine-field-info-content-wrap-address {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calculation-force-tit {
+        margin-bottom: 15px;
+        text-align: center;
+        color: #5E6875;
+    }
+
+    .calculation-force-content {
+        text-align: center;
+    }
+
+    .mine-field-info-address {
+        margin-bottom: 15px;
+    }
+
+    .profit-charts {
+        width: 1000px; 
+        height: 400px;
+    }
+
+    .list-wrap {
+        margin: 50px 0 0 0;
+        width: 1200px;
+        background-color: #fff;
+    }
+
+    .list-bg {
+        padding: 40px;
+    }
+
+    .list-tabs-wrap {
+        display: inline-flex;
+    }
+
+    .list-tab {
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #E5EFFA;
+        color: #005CC7;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .list-tab-active {
+        background-color: #005CC7;
+        color: #fff;
+    }
+
+    .list-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .list-table {
+        margin: 30px 0;
+    }
+
+    .payment-txid .el-table_2_column_7 {
+        color: #005CC7;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .profit-content-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #FAFCFF;
+    }
+
+    .miner-total-wrap {
+        margin: 30px 0 0 0;
+        width: 100%;
+        height: 213px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+    }
+
+    .miner-address {
+        margin: 0 0 30px 0;
+        font-size: 18px;
+        color: #5E6875;
+    }
+
+    .miner-count-wrap {
+        display: flex;
+    }
+
+    .miner-count-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+    }
+
+    .miner-count-box-online {
+        margin-right: 50px;
+        color: #2CD7A3;
+    }
+
+    .miner-count-box-total {
+        color: #005CC7;
+    }
+
+    .miner-count-icon {
+        margin-right: 20px;
+        display: inline-block;
+        width: 24px;
+        height: 18px;
+        border-radius: 4px;
+    }
+
+    .miner-count-icon-online {
+        background-color: #2CD7A3;
+    }
+
+    .miner-count-icon-total {
+        background-color: #005CC7;
+    }
+
+    .profit-info-wrap {
+        margin: 30px 0 0 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .profit-info-group {
+        width: 268px;
+        height: 104px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #fff;
+        /* align-items: center; */
+    }
+
+    .profit-info-tit {
+        margin: 0 0 10px 20px;
+        font-size: 12px;
+        color: #5E6875;
+    }
+
+    .profit-info-content {
+        margin: 0 0 10px 20px;
+        font-size: 18px;
+        color: #195ADD;
+    }
+
+    .profit-charts-wrap {
+        margin: 30px 0 0 0;
+        width: 100%;
+        height: 528px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+    }
+
+    .mine-field-info-wrap {
+        margin: 50px 0 0 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mine-field-info-group {
+        width: 385px;
+        height: 213px;
+    }
+
+    .mine-field-info-tit {
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        font-size: 16px;
+        color: #afb1c2;
+        text-align: center;
+        background: #E3EBFB;
+    }
+
+    .mine-field-info-content-wrap {
+        width: 100%;
+        height: 140px;
+        background: #fff;
+        display: flex;
+    }
+
+    .mine-field-info-content-wrap-calculation-force {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mine-field-info-content-wrap-address {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calculation-force-tit {
+        margin-bottom: 15px;
+        text-align: center;
+        color: #5E6875;
+    }
+
+    .calculation-force-content {
+        text-align: center;
+    }
+
+    .mine-field-info-address {
+        margin-bottom: 15px;
+    }
+
+    .profit-charts {
+        width: 100%; 
+        height: 400px;
+    }
+
+    .list-wrap {
+        margin: 50px 0 0 0;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .list-bg {
+        padding: 40px;
+    }
+
+    .list-tabs-wrap {
+        display: inline-flex;
+    }
+
+    .list-tab {
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #E5EFFA;
+        color: #005CC7;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .list-tab-active {
+        background-color: #005CC7;
+        color: #fff;
+    }
+
+    .list-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .list-table {
+        margin: 30px 0;
+    }
+
+    .payment-txid .el-table_2_column_7 {
+        color: #005CC7;
+    }
+}
