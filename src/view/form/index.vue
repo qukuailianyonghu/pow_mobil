@@ -10,6 +10,11 @@ export default {
         return {
             WIDTH: '',
             HEIGHT: '',
+          pageDone: false,
+          formVisible: false,
+          email_message:'',
+          title_message:'',
+          type_message:'',
             moreHelpForm: {
                 email: '',
                 tit: '',
@@ -30,17 +35,40 @@ export default {
         }
     },
     components: {
-        
+
     },
     methods: {
         toIndex() {
             this.$router.push({ path: '/' });
         },
+      submit_f(email,title,content,type) {
+        this.$http.post(
+          "https://web.2100pool.com/tokenbank/pow/dcr/a_worker_order",
+          {
+            email:email,
+            title:title,
+            content:content,
+            type:type
+          },
+          {emulateJSON: true}
+        ).then(response => {
+          var status = response.body.status;
+          if (0 != status) {
+            this.results = -1;
+          } else {
+            this.results = 0;
+          }
+        }).catch((res) => {
+          this.results = -1;
+        })
+      },
         submitHelpForm(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
                     console.log('验证完毕，接口提交');
-                    // //提交成功
+                  this.submit_f(this.moreHelpForm.email,this.moreHelpForm.tit,this.moreHelpForm.describe,this.moreHelpForm.type);
+                  this.formVisible = false;
+                  // //提交成功
                     // this.$alert('提交成功', {
                     //     confirmButtonText: '确定',
                     //     callback: action => {
@@ -56,7 +84,7 @@ export default {
                     // this.$alert('提交失败', {
                     //     confirmButtonText: '确定',
                     //     callback: action => {
-                            
+
                     //     }
                     // });
                 } else {
