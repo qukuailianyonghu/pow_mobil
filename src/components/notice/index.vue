@@ -10,6 +10,7 @@ export default {
     data() {
         return {
           noticeOn: true,
+          noticeMsg: '',
             listData: [{
                 'title': '无缝滚动第一行无缝滚动第一行',
                 'date': '2017-12-16'
@@ -55,7 +56,7 @@ export default {
           {emulateJSON: true}
         ).then(response => {
 
-          this.listData = response.body.data.announcement;
+          this.noticeMsg = response.body.data.announcement;
 
         }).catch((res) => {
 
