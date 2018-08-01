@@ -61,7 +61,7 @@ export default {
         },
         searchAddress() {
           this.menuFlag = false;
-          this.$router.push({ path: '/profit',query: { address: this.value }});
+          this.$router.push({ path: '/addressDetails',query: { address: this.value }});
         }
     },
     mounted() {
