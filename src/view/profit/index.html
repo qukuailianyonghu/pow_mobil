@@ -101,15 +101,15 @@
             <el-table-column prop="txid" label="交易(TXID)" width="560" align="center" header-align="center"></el-table-column>
             <el-table-column prop="price" label="金额" width="280" align="center" header-align="center"></el-table-column>
           </el-table>
-          <!--<el-pagination-->
-          <!--v-show="activeTab == 1"-->
-          <!--@current-change="handlePaymentListCurrentChange"-->
-          <!--:current-page.sync="paymentListCurrentPage"-->
-          <!--:page-size="paymentListPageSize"-->
-          <!--:pager-count="11"-->
-          <!--layout="prev, pager, next"-->
-          <!--:total="paymentListTotal">-->
-          <!--</el-pagination>-->
+          <el-pagination
+          v-show="activeTab == 1"
+          @current-change="handlePaymentListCurrentChange"
+          :current-page.sync="paymentListCurrentPage"
+          :page-size="paymentListPageSize"
+          :pager-count="11"
+          layout="prev, pager, next"
+          :total="paymentListTotal">
+          </el-pagination>
         </div>
       </div>
     </div>
