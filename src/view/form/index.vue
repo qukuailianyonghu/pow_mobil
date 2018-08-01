@@ -65,7 +65,6 @@ export default {
         submitHelpForm(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
-                    console.log('验证完毕，接口提交');
                   this.submit_f(this.moreHelpForm.email,this.moreHelpForm.tit,this.moreHelpForm.describe,this.moreHelpForm.type);
                   this.formVisible = false;
                   // //提交成功
