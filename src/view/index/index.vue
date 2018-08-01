@@ -52,6 +52,8 @@ export default {
       }
     },
     mounted() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         this.WIDTH = window.innerWidth + 'px';
         this.HEIGHT = window.innerHeight + 'px';
         let _canvas = this.$refs.indexCanvas;

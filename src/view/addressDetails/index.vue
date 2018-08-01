@@ -173,7 +173,8 @@ export default {
       }
     },
     mounted() {
-
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       this.addresses=this.$route.query.address;
       this.httpPost(this.addresses);
         this.WIDTH = window.innerWidth + 'px';
@@ -193,6 +194,9 @@ export default {
 
         isPC() {
             return this.$store.state.base.isPC;
+        },
+        noticeIsClosed() {
+            return this.$store.state.base.noticeIsClosed
         }
 
     }

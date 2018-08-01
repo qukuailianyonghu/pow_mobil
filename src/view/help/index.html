@@ -211,7 +211,7 @@
         <div class="footer-place"></div>
     </div>
     <div v-if="!isPC">
-        <div class="top-navigation-place-m" :style="{ 'width': WIDTH }"></div>
+      <div class="top-navigation-place-m-public" :class="noticeIsClosed ? 'top-navigation-place-m-notice-close' : 'top-navigation-place-m'" :style="{ 'width': WIDTH }"></div>
         <div class="configure-wrap-m">
             <div class="configure-group-m">
                 <h1 class="configure-tit-m">DCR挖矿配置详解</h1>

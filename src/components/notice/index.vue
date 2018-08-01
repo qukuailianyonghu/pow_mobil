@@ -46,6 +46,7 @@ export default {
     methods: {
         closeNotice() {
           this.noticeOn = false;
+          this.$store.state.base.noticeIsClosed = true;
         },
       httpPost() {
         this.$http.post(

@@ -1,5 +1,5 @@
 <div v-if="!isPC">
-    <div class="top-navigation-place-m" :style="{ 'width': WIDTH }"></div>
+    <div class="top-navigation-place-m-public" :class="noticeIsClosed ? 'top-navigation-place-m-notice-close' : 'top-navigation-place-m'" :style="{ 'width': WIDTH }"></div>
     <div :style="{ 'width': WIDTH }">
         <div class="miner-total-wrap-m shadow-box border-box">
             <div class="miner-address-m">{{addresses}}</div>

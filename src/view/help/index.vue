@@ -91,6 +91,8 @@ export default {
         }
     },
     mounted() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         this.WIDTH = window.innerWidth + 'px';
         this.HEIGHT = window.innerHeight + 'px';
         if (this._isMobile()) {
@@ -114,6 +116,9 @@ export default {
     computed: {
         isPC() {
             return this.$store.state.base.isPC
+        },
+        noticeIsClosed() {
+            return this.$store.state.base.noticeIsClosed
         }
     }
 }

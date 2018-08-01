@@ -2,6 +2,7 @@ export default {
     state: {
         locationHref: '',
         isLocation: false,
-        isPC: true
+        isPC: true,
+        noticeIsClosed: false
     }
 }
