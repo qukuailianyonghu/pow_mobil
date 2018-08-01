@@ -24,7 +24,7 @@ export default {
             ],
             minerListCurrentPage: 1,
             minerListPageSize: 10,
-            minerListTotal: 100,
+            minerListTotal: 0,
             paymentListCurrentPage: 1,
             paymentListPageSize: 10,
             paymentListTotal: 0,
@@ -142,7 +142,8 @@ export default {
             this.activeTab = val;
         },
         handleMinerListCurrentChange(val) {
-            this.minerListCurrentPage = val;
+          this.getWorkerList(this.addresses,val,this.minerListPageSize);
+          this.minerListCurrentPage = val;
             //请求接口
         },
         handlePaymentListCurrentChange(val) {
@@ -156,16 +157,7 @@ export default {
           {address:addresses},
           {emulateJSON: true}
         ).then(response => {
-          this.notPaidReward = response.body.data.notPaidReward;
-          this.selectTotalPaied = response.body.data.selectTotalPaied;
-          this.totalOneHour = response.body.data.totalOneHour;
-          this.totalReard = response.body.data.totalReard;
-          this.totalTwentyfour = response.body.data.totalTwentyfour;
-          this.username = response.body.data.username;
-          this.workerAccount = response.body.data.workerAccount;
-          this.workeringAccount = response.body.data.workeringAccount;
-          this.yesterdayTwentyfour = response.body.data.yesterdayTwentyfour;
-          this.minerList = response.body.data.minerList;
+
           this.chartData = response.body.data.chatdata;
           this.drawLine(this.chartData);
         }).catch((res) => {
@@ -188,14 +180,55 @@ export default {
         }).catch((res) => {
 
         })
+      },
+      getWorkerList(addresses,currentPages,sizes) {
+        this.$http.post(
+          "https://web.2100pool.com/tokenbank/pow/dcr/query_worker_page",
+          {
+            address:addresses,
+            currentPage:currentPages,
+            size:sizes
+          },
+          {emulateJSON: true}
+        ).then(response => {
+          this.minerList = response.body.data.minerList;
+          this.minerListCurrentPage = parseInt(response.body.data.current_page);
+          this.minerListTotal = parseInt(response.body.data.records);
+        }).catch((res) => {
+
+        })
+      },
+      //获取回报信息
+      getRewardInfo(addresses) {
+        this.$http.post(
+          "https://web.2100pool.com/tokenbank/pow/dcr/query_reward_info",
+          {
+            address:addresses
+          },
+          {emulateJSON: true}
+        ).then(response => {
+          this.notPaidReward = response.body.data.notPaidReward;
+          this.selectTotalPaied = response.body.data.selectTotalPaied;
+          this.totalOneHour = response.body.data.totalOneHour;
+          this.totalReard = response.body.data.totalReard;
+          this.totalTwentyfour = response.body.data.totalTwentyfour;
+          this.workerAccount = response.body.data.workerAccount;
+          this.workeringAccount = response.body.data.workeringAccount;
+          this.yesterdayTwentyfour = response.body.data.yesterdayTwentyfour;
+        }).catch((res) => {
+
+        })
       }
     },
     mounted() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
         this.addresses=this.$route.query.address;
+
+        this.getRewardInfo(this.addresses);
         this.httpPost(this.addresses);
         this.getRewardTx(this.addresses,this.paymentListCurrentPage,this.paymentListPageSize);
+        this.getWorkerList(this.addresses,this.minerListCurrentPage,this.minerListPageSize);
 
         this.WIDTH = window.innerWidth + 'px';
         this.HEIGHT = window.innerHeight + 'px';
