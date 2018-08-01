@@ -71,6 +71,25 @@ export default {
                 if (valid) {
                   //接口提交成功后关闭表单
                   this.submit_f(this.moreHelpForm.email,this.moreHelpForm.tit,this.moreHelpForm.describe,this.moreHelpForm.type);
+                  //提交成功
+                    // this.$alert('提交成功', {
+                    //     confirmButtonText: '确定',
+                    //     callback: action => {
+                    //         this.moreHelpForm = {
+                    //             email: '',
+                    //             tit: '',
+                    //             describe: '',
+                    //             type: '1'
+                    //         }
+                    //     }
+                    // });
+                    // //提交失败
+                    // this.$alert('提交失败', {
+                    //     confirmButtonText: '确定',
+                    //     callback: action => {
+                            
+                    //     }
+                    // });
                   if (-1 == this.results) {
                     return false;
                   } else {

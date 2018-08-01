@@ -79,3 +79,21 @@
     border-radius: 8px;
     cursor: pointer;
 }
+
+.el-message-box {
+    width: 60%;
+}
+
+.el-message-box__headerbtn {
+    font-size: 25px;
+}
+
+.el-message-box__content {
+    padding: 30px 45px;
+    font-size: 25px;
+}
+
+.el-button--small {
+    padding: 15px 30px;
+    font-size: 25px;
+}

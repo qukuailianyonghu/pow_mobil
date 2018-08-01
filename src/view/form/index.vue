@@ -1,4 +1,4 @@
-<style src="./index.css"></style>
+<style src="./index.css" ></style>
 
 <template src="./index.html"></template>
 
@@ -40,8 +40,25 @@ export default {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
                     console.log('验证完毕，接口提交');
-                    //接口提交成功后关闭表单
-                    this.formVisible = false;
+                    // //提交成功
+                    // this.$alert('提交成功', {
+                    //     confirmButtonText: '确定',
+                    //     callback: action => {
+                    //         this.moreHelpForm = {
+                    //             email: '',
+                    //             tit: '',
+                    //             describe: '',
+                    //             type: '1'
+                    //         }
+                    //     }
+                    // });
+                    // //提交失败
+                    // this.$alert('提交失败', {
+                    //     confirmButtonText: '确定',
+                    //     callback: action => {
+                            
+                    //     }
+                    // });
                 } else {
                     console.log('error submit!!');
                     return false;
