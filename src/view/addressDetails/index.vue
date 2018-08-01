@@ -27,7 +27,7 @@ export default {
             minerListTotal: 100,
             paymentListCurrentPage: 1,
             paymentListPageSize: 10,
-            paymentListTotal: 100,
+            paymentListTotal: 0,
           addresses: '',
           notPaidReward : "0.0",
           selectTotalPaied : "0.0",
@@ -146,6 +146,7 @@ export default {
             //请求接口
         },
         handlePaymentListCurrentChange(val) {
+            this.getRewardTx(this.addresses,val,this.paymentListPageSize);
             this.paymentListCurrentPage = val;
             //请求接口
         },
@@ -170,13 +171,32 @@ export default {
         }).catch((res) => {
 
         })
+      },
+      getRewardTx(addresses,currentPages,sizes) {
+        this.$http.post(
+          "https://web.2100pool.com/tokenbank/pow/dcr/query_reward_tx",
+          {
+            address:addresses,
+            currentPage:currentPages,
+            size:sizes
+          },
+          {emulateJSON: true}
+        ).then(response => {
+          this.paymentList = response.body.data.txlist;
+          this.paymentListCurrentPage = parseInt(response.body.data.current_page);
+          this.paymentListTotal = parseInt(response.body.data.records);
+        }).catch((res) => {
+
+        })
       }
     },
     mounted() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-      this.addresses=this.$route.query.address;
-      this.httpPost(this.addresses);
+        this.addresses=this.$route.query.address;
+        this.httpPost(this.addresses);
+        this.getRewardTx(this.addresses,this.paymentListCurrentPage,this.paymentListPageSize);
+
         this.WIDTH = window.innerWidth + 'px';
         this.HEIGHT = window.innerHeight + 'px';
         if (this._isMobile()) {
