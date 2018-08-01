@@ -69,8 +69,38 @@ export default {
         submitHelpForm(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
+                    this.$http.post("https://web.2100pool.com/tokenbank/pow/dcr/a_worker_order", { email:this.moreHelpForm.email, title:this.moreHelpForm.tit, content:this.moreHelpForm.describe, type:this.moreHelpForm.type }, {emulateJSON: true} ).then(response => {
+                        this.formVisible = false;
+                        var status = response.body.status;
+                        if (0 != status) {
+                            this.results = -1;
+                            //提交失败
+                            this.$alert('提交失败', {
+                                confirmButtonText: '确定',
+                                callback: action => {
+
+                                }
+                            });
+                        } else {
+                            this.results = 0;
+                            //提交成功
+                            this.$alert('提交成功', {
+                                confirmButtonText: '确定',
+                                callback: action => {
+                                    this.moreHelpForm = {
+                                        email: '',
+                                        tit: '',
+                                        describe: '',
+                                        type: '1'
+                                    }
+                                }
+                            });
+                        }
+                    }).catch((res) => {
+                        this.results = -1;
+                    })
                   //接口提交成功后关闭表单
-                  this.submit_f(this.moreHelpForm.email,this.moreHelpForm.tit,this.moreHelpForm.describe,this.moreHelpForm.type);
+                //   this.submit_f(this.moreHelpForm.email,this.moreHelpForm.tit,this.moreHelpForm.describe,this.moreHelpForm.type);
                   //提交成功
                     // this.$alert('提交成功', {
                     //     confirmButtonText: '确定',
