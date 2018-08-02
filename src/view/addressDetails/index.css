@@ -204,6 +204,16 @@
     cursor: pointer;
 }
 
+.list-tabs-wrap-m .list-tab-m:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.list-tabs-wrap-m .list-tab-m:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 .list-tab-active-m {
     background-color: #005CC7;
     color: #fff;
@@ -239,4 +249,8 @@
 
 .payment-txid-m .el-table_2_column_7 {
     color: #005CC7;
+}
+
+.el-pagination .btn-next .el-icon, .el-pagination .btn-prev .el-icon {
+    font-size: 25px;
 }

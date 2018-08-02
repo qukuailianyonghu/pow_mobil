@@ -204,6 +204,16 @@
     .payment-txid .el-table_2_column_7 {
         color: #005CC7;
     }
+
+    .list-tabs-wrap .list-tab:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    .list-tabs-wrap .list-tab:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
 }
 
 @media screen and (max-width: 1000px) {

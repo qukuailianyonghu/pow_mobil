@@ -194,6 +194,9 @@
         }).catch((res) => {
 
         })
+      },
+      viewTXID(txid) {
+          console.log(txid)
       }
 
     },

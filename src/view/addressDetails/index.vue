@@ -218,6 +218,9 @@ export default {
         }).catch((res) => {
 
         })
+      },
+      viewTXID(txid) {
+          console.log(txid)
       }
     },
     mounted() {

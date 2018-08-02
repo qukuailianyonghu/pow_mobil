@@ -104,7 +104,11 @@
                     </el-pagination>
                     <el-table :data="paymentList" stripe v-show="activeTab == 1" class="list-table-m payment-txid-m">
                         <el-table-column prop="date" label="时间" width="280" align="center" header-align="center"></el-table-column>
-                        <el-table-column prop="txid" label="交易(TXID)" width="560" align="center" header-align="center"></el-table-column>
+                        <el-table-column prop="txid" label="交易(TXID)" width="560" align="center" header-align="center">
+                            <template scope="scope">
+                                <div @click="viewTXID(scope.row.txid)">{{ scope.row.txid }}</div>
+                            </template>
+                        </el-table-column>
                         <el-table-column prop="price" label="金额" width="280" align="center" header-align="center"></el-table-column>
                     </el-table>
                     <el-pagination
