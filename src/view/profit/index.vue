@@ -196,6 +196,8 @@
         })
       },
       viewTXID(txid) {
+          var dds = 'https://mainnet.decred.org/tx/' + txid;
+          window.open(dds);
           console.log(txid)
       }
 
