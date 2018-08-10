@@ -228,7 +228,11 @@ export default {
     mounted() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-        this.addresses=this.$route.query.address;
+        // this.addresses=this.$route.query.address;
+        //获取要查询的地址
+        if(localStorage.getItem("coinAddress") != null) {
+            this.addresses = localStorage.getItem("coinAddress")
+        }
 
         this.getRewardInfo(this.addresses);
         this.httpPost(this.addresses);
@@ -242,10 +246,7 @@ export default {
         } else {
             this.$store.state.base.isPC = true;
         }
-        //获取要查询的地址
-        if(localStorage.getItem("coinAddress") != null) {
-            this.targetAddress = localStorage.getItem("coinAddress")
-        }
+        
 
     },
     computed: {

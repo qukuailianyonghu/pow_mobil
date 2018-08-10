@@ -49,6 +49,7 @@ export default {
             this.$router.push({ path: '/profit' })
         },
         toViewProfit() {
+            localStorage.setItem("coinAddress", this.value);
           this.$router.push({ path: '/profit',query: { address: this.value }});
           this.viewProfitFlag = false;
         },
@@ -61,6 +62,7 @@ export default {
         },
         searchAddress() {
           this.menuFlag = false;
+          localStorage.setItem("coinAddress", this.value);
           this.$router.push({ path: '/addressDetails',query: { address: this.value }});
         }
     },

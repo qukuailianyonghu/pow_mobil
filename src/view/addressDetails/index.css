@@ -254,3 +254,25 @@
 .el-pagination .btn-next .el-icon, .el-pagination .btn-prev .el-icon {
     font-size: 25px;
 }
+
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+    padding: 0 4px;
+    background: #fff;
+    font-size: 24px;
+    min-width: 35.5px;
+    height: 40px;
+    line-height: 40px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+    margin: 0 5px;
+    background-color: #f4f4f5;
+    color: #606266;
+    min-width: 40px;
+    border-radius: 2px;
+}
+.el-pagination .btn-next .el-icon, .el-pagination .btn-prev .el-icon {
+    font-size: 24px;
+}
