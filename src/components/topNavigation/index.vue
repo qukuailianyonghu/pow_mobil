@@ -49,9 +49,16 @@ export default {
             this.$router.push({ path: '/profit' })
         },
         toViewProfit() {
-            // localStorage.setItem("coinAddress", this.value);
-          this.$router.push({ path: '/profit',query: { address: this.value }});
-          this.viewProfitFlag = false;
+            if(this.value != '') {
+                // localStorage.setItem("coinAddress", this.value);
+                this.$router.push({ path: '/profit',query: { address: this.value }});
+                this.viewProfitFlag = false;
+            } else {
+                this.$notify.error({
+                    title: '错误',
+                    message: '请输入正确的DCR地址'
+                });
+            }
         },
         triggerMenu() {
             this.menuFlag = !this.menuFlag;
@@ -61,9 +68,17 @@ export default {
             this.menuFlag = false;
         },
         searchAddress() {
-          this.menuFlag = false;
-        //   localStorage.setItem("coinAddress", this.value);
-          this.$router.push({ path: '/addressDetails',query: { address: this.value }});
+            if(this.value != '') {
+                this.menuFlag = false;
+                //   localStorage.setItem("coinAddress", this.value);
+                this.$router.push({ path: '/addressDetails',query: { address: this.value }});
+            } else {
+                this.$message.error('请输入正确的DCR地址');
+                // this.$notify.error({
+                //     title: '错误',
+                //     message: '请输入正确的地址'
+                // });
+            }
         }
     },
     mounted() {

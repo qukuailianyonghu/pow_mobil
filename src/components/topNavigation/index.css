@@ -201,6 +201,38 @@
         
     }
 
+    .el-message {
+        /* min-width: 380px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #ebeef5;
+        position: fixed;
+        left: 50%;
+        top: 20px;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background-color: #edf2fc;
+        -webkit-transition: opacity .3s,-webkit-transform .4s;
+        transition: opacity .3s,-webkit-transform .4s;
+        transition: opacity .3s,transform .4s;
+        transition: opacity .3s,transform .4s,-webkit-transform .4s;
+        padding: 15px 15px 15px 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; */
+        font-size: 40px;
+        padding: 15px 30px;
+    }
+
+    .el-message__content {
+        font-size: 30px;
+    }
+
     /* .fixed-navigation-wrap-m {
         width: 100%;
         position: fixed;
