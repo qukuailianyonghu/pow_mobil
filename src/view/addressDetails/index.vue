@@ -246,7 +246,7 @@ export default {
         } else {
             this.$store.state.base.isPC = true;
         }
-        
+
 
     },
     computed: {
@@ -258,6 +258,25 @@ export default {
             return this.$store.state.base.noticeIsClosed
         }
 
+    },
+  watch: {
+    $route (to, from) {
+      this.minerListCurrentPage = 1;
+      this.minerListPageSize = 10;
+      this.minerListTotal = 0;
+      this.paymentListCurrentPage = 1;
+      this.paymentListPageSize = 10;
+      this.paymentListTotal = 0;
+      this.addresses=this.$route.query.address;
+      //获取要查询的地址
+      // if(localStorage.getItem("coinAddress") != null) {
+      //     this.addresses = localStorage.getItem("coinAddress")
+      // }
+      this.getRewardInfo(this.addresses);
+      this.httpPost(this.addresses);
+      this.getRewardTx(this.addresses,this.paymentListCurrentPage,this.paymentListPageSize);
+      this.getWorkerList(this.addresses,this.minerListCurrentPage,this.minerListPageSize);
     }
+  }
 }
 </script>
