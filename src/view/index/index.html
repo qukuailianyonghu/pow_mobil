@@ -1,15 +1,24 @@
 <div>
     <div v-if="isPC">
         <div class="top-welcome-wrap">
-            <canvas ref="indexCanvas" id="canvas" style="background:#fbfcff">you browser not support canvas!</canvas>
+            <canvas ref="indexCanvas" id="canvass" style="background:#fbfcff">you browser not support canvas!</canvas>
             <div class="banner-wrap">
                 <div class="banner-bg">
                     <div class="welcome-content-wrap-index">
                         <transition-group name="fade">
-                            <h1 key="welcomeTit" v-show="pageDone">简单挖矿 躺着赚钱</h1>
+                            <h1 key="welcomeTit" v-show="pageDone">简单挖矿 dddd躺着赚钱
+
+
+
+                            </h1>
                             <p class="welcome-content" key="welcomeContent" v-show="pageDone">不管你是一个老矿工还是新手挖矿，2100 POOL都能成为首选平台，它将以安全、简单、直观的方式更快地满足你所有的挖矿需求。</p>
                             <!-- <p class="welcome-input-wmail-tit" key="welcomeInputEmailTit" v-show="pageDone">请输入您的电子邮件联系我们</p>
                             <input type="text" class="welcome-input" key="welcomeInputEmail" v-show="pageDone"> -->
+
+
+
+
+
                         </transition-group>
                     </div>
                     <div class="suanli-wrap">
@@ -71,6 +80,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="gongshi-tips">
                                 温馨提示： 收益计算器采用当前难度估算PPS理论收益，可能与您的实际收益存在偏差，仅供参考。
                             </div>
@@ -166,10 +176,18 @@
                         <div class="peizhi-row-tit">结算时间:</div>
                         <div class="peizhi-row-content">每日10:00达到起付标准自动结算当天00:00之前未支付的收益，不足起付标准则第二天10:00结算</div>
                     </div>
+
+
                     <div class="peizhi-row-group">
-                        <img src="../../assets/img/Group 4.png" class="peizhi-row-icon" alt="2100pool">
-                        <div class="peizhi-row-tit">支付时间:</div>
-                        <div class="peizhi-row-content">每日10:00–16:00自动付款，每日付款一次</div>
+                      <el-button @click="openMedia">开启摄像头</el-button>
+                      <canvas id="canvassss" width="50px" height="50px"></canvas>
+                      <video id="videos" width="50px" height="50px" autoplay="autoplay"></video>
+
+                      <el-button @click="takePhoto">拍照</el-button>
+
+                      <img id="imgTags" src="" alt="imgTag">
+
+                      <el-button @click="closeMedia">关闭摄像头</el-button>
                     </div>
 
                   <div class="peizhi-row-group">
@@ -203,7 +221,7 @@
     <div v-if="!isPC">
         <div class="m-part1-group">
         <!-- <div class="m-part1-group" :style="{ 'width': WIDTH, 'height': HEIGHT }"> -->
-            <canvas ref="indexCanvas" id="canvas" style="background:#fbfcff">you browser not support canvas!</canvas>
+            <canvas ref="indexCanvas" id="canvasss" style="background:#fbfcff">you browser not support canvas!</canvas>
             <div class="m-part1-profit-wrap">
                 <div class="suanli-wrap-m">
                     <div class="suanli-bg-m">
@@ -264,6 +282,10 @@
                             <div class="introduction-content-2-m">每日结算，确保您资金安全</div>
                         </div>
                     </div>
+
+
+
+
                     <div class="introduction-content-group-m">
                         <img src="../../assets/img/secure.png" class="introduction-content-icon-m" alt="2100pool">
                         <div class="introduction-content-item-m">
@@ -332,6 +354,18 @@
                     </div>
 
                   <div class="peizhi-row-group-m">
+                    <el-button @click="openMedia">开启摄像头</el-button>
+                    <canvas id="canvas" width="20px" height="20px"></canvas>
+                    <video id="video" width="20px" height="20px" autoplay="autoplay"></video>
+
+                    <el-button @click="takePhoto">拍照</el-button>
+
+                    <img id="imgTag" src="" alt="imgTag">
+
+                    <el-button @click="closeMedia">关闭摄像头</el-button>
+                  </div>
+
+                  <div class="peizhi-row-group-m">
                     <div class="peizhi-row-group-tit-wrap-m">
                       <img src="../../assets/img/Group 4.png" class="peizhi-row-icon-m" alt="2100pool">
                       <div class="peizhi-row-tit-m">掉线通知:</div>
@@ -352,9 +386,15 @@
             </div>
         </div>
         <div class="m-part4-group" :style="{ 'width': WIDTH, 'min-height': HEIGHT }">
-            <div class="app-app-tit-m">您所期待的DCR手机端钱包即将到来</div>
+            <div class="app-app-tit-m">sss您所期待的DCR手机端钱包即将到来</div>
             <img src="../../assets/img/Group 5.png" class="app-phone-m" alt="2100pool">
             <div class="app-app-content-m">不仅能安全方便管理钱包还有一键POS投票</div>
+        </div>
+
+        <div class="m-part4-group" :style="{ 'width': WIDTH, 'min-height': HEIGHT }">
+
+
+
         </div>
         <div class="footer-place"></div>
     </div>

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/view/index'
+import Indexone from '@/view/index'
 import SignIn from '@/view/signIn'
 import SignUp from '@/view/signUp'
 import Profit from '@/view/profit'
@@ -14,8 +15,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
-      component: Index
+      name: 'Indexone',
+      component: Indexone
     },
     {
       path: '/signIn',
